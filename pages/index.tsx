@@ -1,47 +1,38 @@
-/* eslint-disable @next/next/no-img-element */
-import Navbar from 'components/landing/Navbar';
 import MainView from 'components/landing/MainView';
 import Footer from 'components/landing/Footer';
 
 export default function Home() {
   return (
     <MainView showNavbar={false} showFooter={false}>
-      <div className="flex flex-col splash-bg">
-        <div className="shadow-sm bg-slate-600">
-          <Navbar withText={true} />
-          <div className="container flex flex-col lg:flex-row items-center justify-center my-12">
-            <div className="container flex flex-col items-center justify-center px-2">
-              <p className="text-3xl pt-3 text-center text-primary-500">
+      <div className="flex flex-col">
+        <div className="shadow-sm bg-slate-800 min-h-screen">
+          <div className="w-screen flex flex-col justify-center">
+            <div className="container text-center">
+              <h1 className="text-8xl font-bold text-slate-300 leading-tight mb-8 mt-12">
+                mdsilo
+              </h1>
+              <b className="text-4xl font-semibold text-slate-300 leading-tight my-6">
+                Knowledge Base, Local and Free 
+              </b>
+              <p className="text-3xl py-2 text-center text-primary-500 my-4">
                 Buffering for your daily I/O 
               </p>
-              <p className="text-xl pt-4 text-center text-white">
-                A Lightweight Personal Wiki: available for Windows(<a href="https://github.com/mdSilo/mdSilo/releases/download/app-v0.4.8/mdsilo_0.4.8_x64_en-US.msi" className="link" target="_blank" rel="noopener noreferrer">msi</a>), macOS(<a href="https://github.com/mdSilo/mdSilo/releases/download/app-v0.4.8/mdsilo_0.4.8_x64.dmg" className="link" target="_blank" rel="noopener noreferrer">dmg</a>, <a href="https://github.com/mdSilo/mdSilo/releases/download/app-v0.4.8/mdsilo.app.tar.gz" className="link" target="_blank" rel="noopener noreferrer">app</a>), Linux(<a href="https://github.com/mdSilo/mdSilo/releases/download/app-v0.4.8/mdsilo_0.4.8_amd64.deb" className="link" target="_blank" rel="noopener noreferrer">deb</a>, <a href="https://github.com/mdSilo/mdSilo/releases/download/app-v0.4.8/mdsilo_0.4.8_amd64.AppImage" className="link" target="_blank" rel="noopener noreferrer">AppImage</a>). 
-              </p>
-              <div className="flex flex-wrap items-center justify-center mt-4">
-                <button className="m-1 text-lg text-white text-center bg-slate-700 py-2 px-4 rounded hover:bg-green-400">
-                  <a href="https://github.com/mdSilo/mdSilo/releases" target="_blank" rel="noopener noreferrer">VERSION  0.4.8</a>
-                </button>
-                <button className="m-1 text-lg text-white text-center bg-slate-500 py-2 px-4 rounded hover:bg-green-600">
-                  <a href="/playground" target="_blank" rel="noopener noreferrer">Live Demo</a>
-                </button>
+              <div className="flex-1 mx-auto pt-4 mb-20">
+                <a href="https://github.com/mdSilo/mdSilo-app/releases" target="_blank" rel="noopener noreferrer" className="inline-flex m-4 text-xl btn">
+                  Desktop App
+                </a>
+                <a href="/app" target="_blank" rel="noopener noreferrer" className="inline-flex m-4 text-xl btn">
+                  Web App
+                </a>
               </div>
-            </div>
-            <div 
-              className="container p-2 text-center drop-shadow-lg" 
-              title="All-In-One: WYSIWYG, Markdown, MindMap"
-            >
-              <img className="rounded-md" src="/3-mode.webp"></img>
-              <p className="text-xs text-center text-white">
-                All-In-One: WYSIWYG, Markdown, MindMap... 
-              </p>
+              <a href="https://mdsilo.com" target="_blank" rel="noopener noreferrer" className="inline-flex m-2 link">
+                Try our online application to practice daily wirting. 
+              </a>
             </div>
           </div>
         </div>
-        <div>
-          <svg className="fill-slate-600" viewBox="0 0 1024 65"><path d="M99 0.25C59.25 0 0 25 0 25.2V0.25H99C99 0.25 99 0.25 99 0.25C99 0.25 99 0.25 99 0.25H1150V65C1018 22 958 25 820 23C672 21 573 73 427 73C308 73 218 0.25 99 0.25H99Z"></path></svg>
-        </div>
-        <Footer className="mt-10" />
       </div>
+      <Footer className="bg-slate-800" />
     </MainView>
   );
 }

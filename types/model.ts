@@ -1,27 +1,33 @@
+import { PickPartial } from "./utils";
 
 export type User = {
   id: string;
 };
 
 export type Note = {
-  id: string;
-  title?: string;
+  id: string;  
+  title: string;
   content: string;
-  user_id: User['id'] | null;
+  file_path: string;
+  cover: string | null;
   created_at: string;
   updated_at: string;
-  is_pub: boolean;
-  is_wiki: boolean;
   is_daily: boolean;
+  is_dir?: boolean;
 };
 
 export const defaultUserId =  '00000000-0000-0000-0000-000000000000';
 export const defaultNote =  {
-  content: '',
-  user_id: defaultUserId,
+  title: 'untitled',
+  content: ' ',
+  file_path: '',
+  cover: '',
   created_at: new Date().toISOString(),
   updated_at: new Date().toISOString(),
-  is_pub: false,
-  is_wiki: false,
   is_daily: false,
 };
+
+export type NoteUpdate = PickPartial<
+  Note, // id required
+  'title' | 'content' | 'created_at' | 'updated_at' | 'file_path' | 'cover' | 'is_daily' 
+>;
